@@ -1,10 +1,13 @@
-// You can import your modules
-// const index = require('../index')
+const isQuestion = require("../question");
 
-test('that we can run tests', () => {
-  // your real tests go here
-  expect(1 + 2 + 3).toBe(6)
-})
+test("Return true for valid questions", () => {
+  expect(isQuestion("Why this should be used")).toBeTruthy();
+  expect(isQuestion("What is this project")).toBeTruthy();
+  expect(isQuestion("How to fix this shit")).toBeTruthy();
+  expect(isQuestion("Does this thing work")).toBeTruthy();
+  expect(isQuestion("Whether this thing is correct or not")).toBeTruthy();
+});
 
-// For more information about testing with Jest see:
-// https://facebook.github.io/jest/
+test("Return false for non question statements", () => {
+  expect(isQuestion("This is the way this shit should be done!")).toBeFalsy();
+});
