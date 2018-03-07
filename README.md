@@ -1,15 +1,17 @@
-# question-tagger
+# Probot Question Tagger :question:
 
-> a GitHub App built with [probot](https://github.com/probot/probot) that 
+This is a probot app which tags a issue as question if it finds the comment to be question
 
 ## Setup
 
-```
 # Install dependencies
+
+```bash
 npm install
+```
 
 # Run the bot
+
+```bash
 npm start
 ```
-
-See [docs/deploy.md](docs/deploy.md) if you would like to run your own instance of this app.
