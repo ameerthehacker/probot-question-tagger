@@ -2,12 +2,13 @@
   "name": "question-tagger",
   "version": "1.0.0",
   "description": "",
-  "author": "ameerthehacker <ameerjhanprof@gmail.com> (http://ameerthehacker.github.io/portfolio-os)",
+  "author":
+    "ameerthehacker <ameerjhanprof@gmail.com> (http://ameerthehacker.github.io/portfolio-os)",
   "license": "ISC",
   "repository": "https://github.com/ameerthehacker/question-tagger.git",
   "scripts": {
     "start": "probot run ./index.js",
-    "test": "jest && standard"
+    "test": "jest"
   },
   "dependencies": {
     "probot": "^5.0.0"
@@ -22,8 +23,6 @@
     "npm": ">= 4.0.0"
   },
   "standard": {
-    "env": [
-      "jest"
-    ]
+    "env": ["jest"]
   }
 }

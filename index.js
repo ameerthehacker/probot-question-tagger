@@ -1,10 +1,15 @@
-module.exports = (robot) => {
-  // Your code here
-  robot.log('Yay, the app was loaded!')
+const isQuestion = require("./question");
 
-  // For more information on building apps:
-  // https://probot.github.io/docs/
+module.exports = robot => {
+  robot.on("issues.opened", async context => {
+    const issueTitle = context.payload.issue.title;
+    const issueBody = context.payload.issue.body;
+    const params = context.issue({ labels: ["question"] });
 
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
-}
+    console.log(context);
+
+    if (isQuestion(issueTitle) || isQuestion(issueBody)) {
+      return context.github.issues.addLabels(params);
+    }
+  });
+};
