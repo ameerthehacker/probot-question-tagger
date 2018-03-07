@@ -4,13 +4,13 @@ This is a probot app which tags a issue as question if it finds the comment to b
 
 ## Setup
 
-# Install dependencies
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-# Run the bot
+### Run the bot
 
 ```bash
 npm start
