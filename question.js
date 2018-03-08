@@ -5,7 +5,23 @@ module.exports = isQuestion = statement => {
   const tagger = new pos.Tagger();
   const taggedWords = tagger.tag(lex);
   const startWith = ["WRB", "WHP", "WP$", "WDT", "PRP", "MD", "PP$"];
-  const endWith = ["VB", "VBD", "VBG", "VBN", "VBP", "VBZ", "TO", "DT"];
+  const endWith = [
+    "VB",
+    "VBD",
+    "VBG",
+    "VBN",
+    "VBP",
+    "VBZ",
+    "TO",
+    "DT",
+    "NN",
+    "NNP",
+    "NNPS",
+    "NNS",
+    "JJ",
+    "JJR",
+    "JJS"
+  ];
   let question = false;
 
   for (let i = 1; i < taggedWords.length; i++) {
