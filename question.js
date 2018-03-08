@@ -1,17 +1,25 @@
-module.exports = isQuestion = statement => {
-  const questionTags = ["why", "where", "what", "how", "whether", "does"];
+const pos = require("pos");
 
-  const words = statement.split(" ");
+module.exports = isQuestion = statement => {
+  const lex = new pos.Lexer().lex(statement);
+  const tagger = new pos.Tagger();
+  const taggedWords = tagger.tag(lex);
+  const startWith = ["WRB", "WHP", "WP$", "WDT", "PRP", "MD", "PP$"];
+  const endWith = ["VB", "VBD", "VBG", "VBN", "VBP", "VBZ", "TO", "DT"];
   let question = false;
 
-  words.forEach(word => {
-    if (word.trim().length != 0) {
-      word = word.toLowerCase();
-      if (questionTags.find(questionTag => word == questionTag)) {
-        question = true;
-      }
+  for (let i = 1; i < taggedWords.length; i++) {
+    stmntHasStartTag = false;
+    if (taggedWords[0] != "that") {
+      stmntHasStartTag = startWith.find(tag => tag == taggedWords[i - 1][1]);
     }
-  });
+    stmentHasEndTag = endWith.find(tag => tag == taggedWords[i][1]);
+
+    if (stmntHasStartTag && stmentHasEndTag) {
+      question = true;
+      break;
+    }
+  }
 
   return question;
 };

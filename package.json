@@ -2,8 +2,7 @@
   "name": "question-tagger",
   "version": "1.0.0",
   "description": "",
-  "author":
-    "ameerthehacker <ameerjhanprof@gmail.com> (http://ameerthehacker.github.io/portfolio-os)",
+  "author": "ameerthehacker <ameerjhanprof@gmail.com> (http://ameerthehacker.github.io/portfolio-os)",
   "license": "ISC",
   "repository": "https://github.com/ameerthehacker/question-tagger.git",
   "scripts": {
@@ -11,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "pos": "^0.4.2",
     "probot": "^5.0.0"
   },
   "devDependencies": {
@@ -23,6 +23,8 @@
     "npm": ">= 4.0.0"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   }
 }
